@@ -14,6 +14,7 @@ describe('toArrayBuffer', () => {
     it.each([
         [0, 3],
         [-3, 3],
+        [-10, 3],
     ])(
         'returns the buffer without modification when the specified slice encompasses the entire data (offset: %d, length: %d)',
         (offset, length) => {

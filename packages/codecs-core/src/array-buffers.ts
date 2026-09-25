@@ -4,6 +4,13 @@ import { ReadonlyUint8Array } from './readonly-uint8array';
  * Converts a `Uint8Array` to an `ArrayBuffer`. If the underlying buffer is a `SharedArrayBuffer`,
  * it will be copied to a non-shared buffer, for safety.
  *
+ * @param bytes - The byte array to convert.
+ * @param offset - The byte offset at which the returned buffer starts. A negative offset counts back
+ * from the end of the buffer, like `Array.prototype.slice`, only when `bytes.byteOffset` is `0`. For a
+ * view into a larger non-shared buffer, the offset is added to `bytes.byteOffset` and the result is
+ * resolved against the underlying buffer instead.
+ * @param length - The number of bytes to include. Defaults to `bytes.byteLength`.
+ *
  * @remarks
  * Source: https://stackoverflow.com/questions/37228285/uint8array-to-arraybuffer
  */
